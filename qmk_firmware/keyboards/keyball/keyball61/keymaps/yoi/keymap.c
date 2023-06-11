@@ -299,6 +299,14 @@ layer_state_t layer_state_set_user(layer_state_t state)
   return state;
 }
 
+const key_override_t backspace_key_override = ko_make_basic(MOD_MASK_CTRL, KC_H, KC_BSPC);
+
+// This globally defines all key overrides to be used
+const key_override_t **key_overrides = (const key_override_t *[]){
+	&backspace_key_override,
+	NULL // Null terminate the array of overrides!
+};
+
 #ifdef OLED_ENABLE
 
 #include "lib/oledkit/oledkit.h"
