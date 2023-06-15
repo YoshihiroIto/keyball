@@ -39,6 +39,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 ///
 ////////////////////////////////////
 
+// make -j8 SKIP_GIT=yes keyball/keyball61:yoi
+
 enum custom_keycodes
 {
   KC_MY_BTN1 = KEYBALL_SAFE_RANGE, // Remap上では 0x5DAF
@@ -147,6 +149,10 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record)
     pointing_device_send();
     return false;
   }
+
+  case KC_F20:
+    click_timer = timer_read();
+    break;
 
   default:
     if (record->event.pressed)
