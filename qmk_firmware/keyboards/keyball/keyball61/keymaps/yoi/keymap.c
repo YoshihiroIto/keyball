@@ -18,6 +18,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #include QMK_KEYBOARD_H
 #include "quantum.h"
+#include "features/one_tap_double_click.h"
 
 // コード表
 // 【KBC_RST: 0x5DA5】Keyball 設定のリセット
@@ -151,7 +152,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record)
   }
 
   case KC_F20:
-    click_timer = timer_read();
+    double_click_mouse_button1();  // マウスボタン1をダブルクリック
     break;
 
   default:
