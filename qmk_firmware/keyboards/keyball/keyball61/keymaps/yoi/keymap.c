@@ -117,6 +117,10 @@ bool is_clickable_mode(void)
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record)
 {
+  if (!handle_double_click(keycode, record)) {
+    return false;
+  }
+
 
   switch (keycode)
   {
@@ -150,10 +154,6 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record)
     pointing_device_send();
     return false;
   }
-
-  case KC_F20:
-    double_click_mouse_button1();  // マウスボタン1をダブルクリック
-    break;
 
   default:
     if (record->event.pressed)

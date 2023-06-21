@@ -73,8 +73,7 @@ void double_click_mouse_button1(void) {
 // ユーザーが特定のキーコードを操作したときの動作を制御する関数
 bool handle_double_click(uint16_t keycode, keyrecord_t *record) {
   switch (keycode) {
-    // キーコードがマウスボタン1の場合
-    case KC_MS_BTN1: {
+    case KC_F20: {
       if (record->event.pressed) {
         // キーダウン時
         double_click_mouse_button1();  // マウスボタン1をダブルクリック
