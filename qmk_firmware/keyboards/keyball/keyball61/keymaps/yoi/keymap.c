@@ -118,6 +118,7 @@ bool is_clickable_mode(void)
 bool process_record_user(uint16_t keycode, keyrecord_t *record)
 {
   if (!handle_double_click(keycode, record)) {
+    click_timer = timer_read();
     return false;
   }
 
