@@ -93,17 +93,6 @@ int16_t my_abs(int16_t num)
   return num & 0x7FFF;
 }
 
-// 自前の符号を返す関数。 Function to return the sign.
-int16_t mmouse_move_y_sign(int16_t num)
-{
-  if (num < 0)
-  {
-    return -1;
-  }
-
-  return 1;
-}
-
 // 現在クリックが可能な状態か。 Is it currently clickable?
 bool is_clickable_mode(void)
 {
