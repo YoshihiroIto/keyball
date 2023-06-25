@@ -109,11 +109,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record)
 
   switch (keycode)
   {
-  case KC_MY_BTN1:
-  case KC_MY_BTN2:
-  case KC_MY_BTN3:
-  case KC_MY_BTN4:
-  case KC_MY_BTN5:
+  case KC_MY_BTN1 ... KC_MY_BTN5:
   {
     report_mouse_t currentReport = pointing_device_get_report();
 
