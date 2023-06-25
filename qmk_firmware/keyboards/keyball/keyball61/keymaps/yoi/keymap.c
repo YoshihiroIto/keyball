@@ -307,19 +307,6 @@ const key_override_t **key_overrides = (const key_override_t *[]){
 
 
 
-//
-// Combo
-//
-const uint16_t PROGMEM pause_combo[] = {KC_G, KC_H, COMBO_END};
-
-combo_t key_combos[COMBO_COUNT] = 
-{
-    COMBO(pause_combo, KC_PAUSE)
-};
-
-
-
-
 #ifdef OLED_ENABLE
 
 #include "lib/oledkit/oledkit.h"
