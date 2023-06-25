@@ -307,6 +307,10 @@ layer_state_t layer_state_set_user(layer_state_t state)
   return state;
 }
 
+
+//
+// Override
+//
 const key_override_t backspace_key_override = ko_make_basic(MOD_MASK_CTRL, KC_H, KC_BSPC);
 const key_override_t esc_key_override = ko_make_basic(MOD_MASK_CTRL, KC_J, KC_ESC);
 const key_override_t down_key_override = ko_make_basic(MOD_MASK_CTRL, KC_N, KC_DOWN);
@@ -320,6 +324,21 @@ const key_override_t **key_overrides = (const key_override_t *[]){
 	&up_key_override,
 	NULL // Null terminate the array of overrides!
 };
+
+
+
+//
+// Combo
+//
+const uint16_t PROGMEM pause_combo[] = {KC_G, KC_H, COMBO_END};
+
+combo_t key_combos[COMBO_COUNT] = 
+{
+    COMBO(pause_combo, KC_PAUSE)
+};
+
+
+
 
 #ifdef OLED_ENABLE
 

@@ -41,3 +41,6 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define KEYBALL_SCROLL_DIV_DEFAULT 6 // スクロール速度の規定値
 
 #define PERMISSIVE_HOLD
+
+#define COMBO_COUNT         1
+#define COMBO_TERM          200
