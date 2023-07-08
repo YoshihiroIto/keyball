@@ -19,6 +19,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include QMK_KEYBOARD_H
 #include "quantum.h"
 #include "features/one_tap_double_click.h"
+#include "features/super_alt_tab.h"
 
 // コード表
 // 【KBC_RST: 0x5DA5】Keyball 設定のリセット
@@ -106,6 +107,9 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record)
     return false;
   }
 
+  if (process_record_user_super_alt_tab(KC_F21, keycode, record) == false){
+    return false;
+  }
 
   switch (keycode)
   {
@@ -212,6 +216,11 @@ report_mouse_t pointing_device_task_user(report_mouse_t mouse_report)
 
   return mouse_report;
 }
+
+void matrix_scan_user(void) { 
+    matrix_scan_user_super_alt_tab();
+}
+
 
 ////////////////////////////////////
 ///
