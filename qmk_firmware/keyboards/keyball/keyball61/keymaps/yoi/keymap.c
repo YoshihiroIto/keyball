@@ -65,7 +65,7 @@ uint16_t click_timer;   // タイマー。状態に応じて時間で判定す�
 
 uint16_t to_reset_time = 1000; // この秒数(千分の一秒)、CLICKABLE状態ならクリックレイヤーが無効になる。 For this number of seconds (milliseconds), the click layer is disabled if in CLICKABLE state.
 
-const int16_t to_clickable_movement = 4; // クリックレイヤーが有効になるしきい値
+const int16_t to_clickable_movement = 25; // クリックレイヤーが有効になるしきい値
 const uint16_t click_layer = 4;          // マウス入力が可能になった際に有効になるレイヤー。Layers enabled when mouse input is enabled
 
 int16_t mouse_record_threshold = 30; // ポインターの動きを一時的に記録するフレーム数。 Number of frames in which the pointer movement is temporarily recorded.
